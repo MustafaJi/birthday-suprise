@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Page 3: Games</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+        .confetti-btn {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            font-size: 1.5rem;
+            padding: 20px 40px;
+            margin: 20px 0;
+        }
+        .confetti-btn:hover {
+            transform: scale(1.1);
+        }
+        .moves {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 15px 0;
+        }
+        .memory-game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 350px;
+            margin: 20px auto;
+        }
+        .card {
+            aspect-ratio: 1;
+            background: #ff6b6b;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .card.flipped { background: white; }
+        .card.matched { visibility: hidden; }
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .nav-btn {
+            padding: 20px 40px;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🎮 Page 3: Let's Play! 🎮</h1>
+
+        <div class="game-section">
+            <h2>🎉 Make it Rain! 🎉</h2>
+            <p>Click to celebrate!</p>
+            <button class="confetti-btn" onclick="celebrate()">🎉 CELEBRATE! 🎉</button>
+        </div>
+
+        <div class="game-section">
+            <h2>🃏 Memory Game 🃏</h2>
+            <p class="moves">Moves: <span id="moves">0</span></p>
+            <button class="btn" onclick="restartGame()">🔄 Restart</button>
+            <div class="memory-game" id="memoryGame">
+                <div class="card" data-value="🎂">?</div>
+                <div class="card" data-value="🎈">?</div>
+                <div class="card" data-value="💕">?</div>
+                <div class="card" data-value="🎁">?</div>
+                <div class="card" data-value="⭐">?</div>
+                <div class="card" data-value="🌟">?</div>
+                <div class="card" data-value="💖">?</div>
+                <div class="card" data-value="🎉">?</div>
+                <div class="card" data-value="🎂">?</div>
+                <div class="card" data-value="🎈">?</div>
+                <div class="card" data-value="💕">?</div>
+                <div class="card" data-value="🎁">?</div>
+                <div class="card" data-value="⭐">?</div>
+                <div class="card" data-value="🌟">?</div>
+                <div class="card" data-value="💖">?</div>
+                <div class="card" data-value="🎉">?</div>
+            </div>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="gifs.html" class="btn nav-btn">📝 Page 4: gifs</a>
+            <a href="shayri.html" class="btn nav-btn">📝 Page 5: shayri</a>
+            <a href="index.html" class="btn nav-btn" style="background: #ccc;">🏠 Page 1: Home</a>
+        </div>
+    </div>
+
+    <script>
+        let moves = 0, flippedCards = [], matchedPairs = 0;
+        
+        function celebrate() {
+            for (let i = 0; i < 150; i++) {
+                const c = document.createElement('div');
+                c.style.cssText = `position:fixed;width:10px;height:10px;background:${['#ff6b6b','#feca57','#48dbfb','#ff9ff3'][Math.floor(Math.random()*4)]};left:${Math.random()*100}%;top:-20px;border-radius:50%;pointer-events:none;animation:fall ${2+Math.random()*2}s linear forwards`;
+                document.body.appendChild(c);
+                setTimeout(() => c.remove(), 4000);
+            }
+        }
+        
+        document.head.appendChild(Object.assign(document.createElement('style'), {textContent:'@keyframes fall{to{transform:translateY(100vh)rotate(720deg);opacity:0}'}));
+        
+        document.querySelectorAll('.card').forEach(card => card.onclick = () => flipCard(card));
+        
+        function flipCard(card) {
+            if (flippedCards.length >= 2 || card.classList.contains('flipped') || card.classList.contains('matched')) return;
+            card.classList.add('flipped');
+            card.textContent = card.dataset.value;
+            flippedCards.push(card);
+            if (flippedCards.length === 2) {
+                moves++;
+                document.getElementById('moves').textContent = moves;
+                checkMatch();
+            }
+        }
+        
+        function checkMatch() {
+            const [c1, c2] = flippedCards;
+            if (c1.dataset.value === c2.dataset.value) {
+                c1.classList.add('matched');
+                c2.classList.add('matched');
+                matchedPairs++;
+                flippedCards = [];
+                if (matchedPairs === 8) setTimeout(celebrate, 500);
+            } else {
+                setTimeout(() => { c1.classList.remove('flipped');c2.classList.remove('flipped');c1.textContent='?';c2.textContent='?';flippedCards=[]; }, 1000);
+            }
+        }
+        
+        function restartGame() {
+            moves = matchedPairs = 0;
+            flippedCards = [];
+            document.getElementById('moves').textContent = '0';
+            document.querySelectorAll('.card').forEach(c => { c.classList.remove('flipped','matched'); c.textContent='?'; });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Shayari</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #1a0033 0%, #2d004d 50%, #4a0066 100%);
+            padding: 30px 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            color: white;
+            opacity: 0.7;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Floating hearts */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .hearts span {
+            position: absolute;
+            opacity: 0.3;
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .hearts span:nth-child(1) { top: 5%; left: 10%; animation-delay: 0s; }
+        .hearts span:nth-child(2) { top: 15%; right: 15%; animation-delay: 0.5s; }
+        .hearts span:nth-child(3) { top: 40%; left: 5%; animation-delay: 1s; }
+        .hearts span:nth-child(4) { top: 60%; right: 10%; animation-delay: 1.5s; }
+        .hearts span:nth-child(5) { bottom: 25%; left: 15%; animation-delay: 2s; }
+        .hearts span:nth-child(6) { top: 30%; right: 25%; animation-delay: 2.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        /* Shayari cards */
+        .shayari-list {
+            position: relative;
+            z-index: 1;
+            text-align: left;
+        }
+        
+        .shayari-card {
+            background: rgba(255,255,255,0.96);
+            border-radius: 15px;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-left: 5px solid #ff6b6b;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .shayari-card:nth-child(2) { border-left-color: #4ecdc4; }
+        .shayari-card:nth-child(3) { border-left-color: #a18cd1; }
+        .shayari-card:nth-child(4) { border-left-color: #ff9a9e; }
+        .shayari-card:nth-child(5) { border-left-color: #feca57; }
+        .shayari-card:nth-child(6) { border-left-color: #48dbfb; }
+        
+        .shayari-card p {
+            color: #333;
+            font-size: 1.15rem;
+            font-style: italic;
+            line-height: 1.9;
+            margin-bottom: 10px;
+        }
+        
+        .shayari-card span {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        
+        .shayari-card:nth-child(2) span { color: #4ecdc4; }
+        .shayari-card:nth-child(3) span { color: #a18cd1; }
+        .shayari-card:nth-child(4) span { color: #ff9a9e; }
+        .shayari-card:nth-child(5) span { color: #feca57; }
+        .shayari-card:nth-child(6) span { color: #48dbfb; }
+        
+        /* Back button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,107,0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts decoration -->
+    <div class="hearts">
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+        <span>💕</span>
+        <span>💖</span>
+        <span>💗</span>
+    </div>
+    
+    <div class="container">
+        <h1>💕 Shayari 💕</h1>
+        <p class="subtitle">For you, my love 💕</p>
+        
+        <div class="shayari-list">
+            <!-- Shayari 1 -->
+            <div class="shayari-card">
+                <p>"Bhatak rahe the andheron mein, koi rahbar na tha,<br>
+                Tum mile to maaloom hua, ishq-e-kamil kya hota hai"</p>
+                <span>— My Love 💕</span>
+            </div>
+            
+            <!-- Shayari 2 -->
+            <div class="shayari-card">
+                <p>"Teri aankhon ke qaid-khaane mein woh sukoon hai,<br>
+                Jo zamaane bhar ki aazaadiyon mein bhi nahi paaya"</p>
+                <span>— Your Eyes 💖</span>
+            </div>
+            
+            <!-- Shayari 3 -->
+            <div class="shayari-card">
+                <p>"Ishq woh aab-e-hayat hai jo rooh ko zinda kar de,<br>
+                Aur tum woh ishq ho jo mujhe jeene ki wajah deta hai"</p>
+                <span>— Life 💗</span>
+            </div>
+            
+            <!-- Shayari 4 -->
+            <div class="shayari-card">
+                <p>"Tum mere naseeb ka woh khoobsurat hissa ho,<br>
+                Jise Rab se maanga bhi hai aur paaya bhi hai"</p>
+                <span>— Destiny 💕</span>
+            </div>
+            
+            <!-- Shayari 5 -->
+            <div class="shayari-card">
+                <p>"Tumhein sochna, tumhein chahna, tum par hi fana hona,<br>
+                Mere dil ka yahi deen hai, yahi mera iimaan hai"</p>
+                <span>— Faith 💖</span>
+            </div>
+            
+            <!-- Shayari 6 -->
+            <div class="shayari-card">
+                <p>"Hazaar waswase aate hoon dil mein, ya saamne saara zamaana khada hai,<br>
+                Jo haath thaam liya aapka, toh phir koi darr nahi rehta kiska..."</p>
+                <span>— Together 💏</span>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-btn">⬅️ Back to Home</a>
+    </div>
+</body>
+</html>

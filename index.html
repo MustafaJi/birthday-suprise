@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Something Special...</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .your-message {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .your-message h2 {
+            color: #ff6b6b;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .your-message p {
+            color: #555;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .nav-btn {
+            padding: 20px 40px;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">💕 Something Special 💕</h1>
+        
+        <div id="countdown-section">
+            <p class="subtitle">The surprise unlocks in...</p>
+            <div class="countdown">
+                <div class="time-block">
+                    <span id="days">00</span>
+                    <label>Days</label>
+                </div>
+                <div class="time-block">
+                    <span id="hours">00</span>
+                    <label>Hours</label>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">00</span>
+                    <label>Minutes</label>
+                </div>
+                <div class="time-block">
+                    <span id="seconds">00</span>
+                    <label>Seconds</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="locked-content">
+            <p class="lock-message">🔒 This surprise is locked!</p>
+        </div>
+
+        <div id="unlocked-content" class="unlocked" style="display: none;">
+            <h2>🎂 Happy Birthday! 🎂</h2>
+            <div class="gift-box">🎁</div>
+            
+            <!-- ========== YOUR MESSAGE HERE ========== -->
+            <div class="your-message">
+                <h2>💕 To My Favorite Person 💕</h2>
+                <p>
+                    [I loveeeeeee youuuuu shonaaaa. I have never been this happy in my life or ever be. Jabse aap aaye meri zindagi mai mai khush rehne laga. I have a reason to live. Mai joh kabhi shaadi socha nahi tha aaj apne bacho ke baare sochra. Apni zindagi Kitana saare paal guzarna hai mai sochra. Yeh waqt bhi bada zalim hai Kitana rukhta hai hame. Maan kara kal ich shaadi kar ke aap ke saath zindagi bitalu. Aap ke saath khana pakana aap ke saath drive pe jana. Nahana sab karna hai merku. That will be my best life ever...aur phir aap ke saath aakhirat bhi guzarna hai apke chote version ku bada hote hue dekhna hai. Sab karna hai bas ab intezar ke alwa kuch nahi kar sakta....]<br><br>
+                    You are the most amazing person I know.<br>
+                    Every day with you is a blessing.<br>
+                    I love you more than words can say!<br><br>
+                    💖 Happy Birthday! 💖
+                </p>
+            </div>
+            <!-- ======================================= -->
+            
+            <div class="nav-buttons">
+                <a href="messages.html" class="btn nav-btn">💌 Page 2: Messages</a>
+                <a href="interactive.html" class="btn nav-btn">🎮 Page 3: Play Games</a>
+                <a href="gifs.html" class="btn nav-btn">📝 Page 4: gifs</a>
+                <a href="shayri.html" class="btn nav-btn">📝 Page 5: shayri</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="countdown.js"></script>
+</body>
+</html>
